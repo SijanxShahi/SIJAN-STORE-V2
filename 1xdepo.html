@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1x DEPO List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #282828;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container h2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .product {
+            background-color: #282828;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            height: 60px;
+            font-size: 14px;
+            font-weight: bold;
+            font-style: italic;
+            color: white;
+            border: 2px solid white;
+        }
+        .product:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .product input[type="checkbox"] {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            transform: scale(1.2);
+        }
+        .next-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #ff007f, #ffb500);
+            color: white;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            font-style: italic;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        }
+        .next-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            background-color: #ff9f00;
+        }
+        .next-button:active {
+            transform: scale(1.05);
+        }
+                   <!-- Logo in the top left corner -->
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    /* Container for top bar */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    /* Menu lines (hamburger) */
+    .menu-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menu-line {
+      width: 30px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* Logo on the right */
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <!-- Left corner: 3 lines -->
+<div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+  <!-- Right corner: logo -->
+  <img src="logo.png" alt="Logo" class="logo">
+</div>
+
+
+</html>
+
+
+</body>
+</html>
+</body>
+</html>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>1X DEPO LIST </h2>
+        <h3>10RS EXTRA CHARGE IN EACH DEPO!</h3>
+        <form id="productForm">
+            <div class="product-list">
+                <!-- Generating product items -->
+                <script>
+                    const productListDiv = document.querySelector('.product-list');
+                    for (let amount = 200, price = 210; amount <= 1000; amount += 100, price += 100) {
+                        const productDiv = document.createElement('div');
+                        productDiv.classList.add('product');
+                        productDiv.innerHTML = `${amount} RE <input type="checkbox" name="products" value="${amount}">`;
+                        productListDiv.appendChild(productDiv);
+                    }
+                </script>
+            </div>
+            <button type="button" class="next-button" onclick="handleSubmit()">Next</button>
+        </form>
+    </div>
+
+    <script>
+        function handleSubmit() {
+            const selectedProducts = [];
+            document.querySelectorAll('input[name="products"]:checked').forEach(checkbox => {
+                selectedProducts.push(checkbox.value);
+            });
+            
+            if (selectedProducts.length > 0) {
+                localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+                window.location.href = 'cyber.html'; // Update this link to the desired file
+            } else {
+                alert('Please select at least one product.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Font and Emoji</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+
+        .product img {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff007f;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .next-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #FF7E5F;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1><b><i>CLICK THE IMAGE TO SHOW THE PRICE</i></b></h1>
+
+    <div class="product">
+        <img src="emoji.jpeg" alt="iOS Font" onclick="showPrice('fontPrice')">
+        <h3>IOS FONT</h3>
+        <div id="fontPrice" class="price">Price: 100rs</div>
+    </div>
+
+    <div class="product">
+        <img src="font.png" alt="iOS Emoji" onclick="showPrice('emojiPrice')">
+        <h3>IOS EMOJI</h3>
+        <div id="emojiPrice" class="price">Price: 100rs</div>
+    </div>
+
+    <button class="next-button" onclick="location.href='cyber.html'">Next</button>
+
+    <script>
+        function showPrice(priceId) {
+            var priceElement = document.getElementById(priceId);
+            priceElement.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

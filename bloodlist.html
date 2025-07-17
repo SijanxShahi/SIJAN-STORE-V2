@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Strike Gold List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+            color: #ff5733; /* Add color to h1 */
+        }
+        .gold-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 80%;
+            max-width: 600px;
+        }
+        .gold-list li {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            position: relative;
+            font-style: italic;
+            font-weight: bold;
+            color: white; /* Reset color to default white */
+        }
+        .gold-list li:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .price {
+            display: none;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            font-weight: bold;
+            color: #ffcc00; /* Gold color for price */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .next-button {
+            display: block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff5733, #c70039); /* Orange to Red gradient */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            margin: 20px auto 0;
+            width: 100px;
+            animation: move 2s infinite alternate;
+        }
+        @keyframes move {
+            from { transform: translateX(0); }
+            to { transform: translateX(10px); }
+        }
+                   <!-- Logo in the top left corner -->
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    /* Container for top bar */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    /* Menu lines (hamburger) */
+    .menu-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menu-line {
+      width: 30px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* Logo on the right */
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <!-- Left corner: 3 lines -->
+  <div class="menu-box">
+    <div class="menu-line"></div>
+            <div class="line"></div>
+    <div class="menu-line"></div>
+               <div class="line"></div>
+    <div class="menu-line"></div>
+               <div class="line"></div>
+  </div>
+
+
+  <!-- Right corner: logo -->
+  <img src="logo.png" alt="Logo" class="logo">
+</div>
+
+
+</html>
+
+
+</body>
+</html>
+</body>
+</html>
+    </style>
+</head>
+<body>
+    <h1>Blood Strike Gold List</h1>
+    <ul class="gold-list">
+        <li onclick="showPrice(this, '130rs')">100 GOLD <span class="price"></span></li>
+        <li onclick="showPrice(this, '400rs')">300 GOLD <span class="price"></span></li>
+        <li onclick="showPrice(this, '670rs')">500 GOLD <span class="price"></span></li>
+        <li onclick="showPrice(this, '1330rs')">1000 GOLD <span class="price"></span></li>
+        <li onclick="showPrice(this, '2650rs')">2000 GOLD <span class="price"></span></li>
+        <li onclick="showPrice(this, '6750rs')">5000 GOLD <span class="price"></span></li>
+    </ul>
+    <a href="cyber.html" class="next-button">NEXT</a>
+
+    <script>
+        function showPrice(element, price) {
+            const priceElement = element.querySelector('.price');
+            priceElement.textContent = price;
+            priceElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d2b48c; /* Classic tan background color */
+            margin: 0;
+            padding: 20px;
+        }
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px;
+            justify-items: center; /* Center items in each column */
+        }
+        .product-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px; /* Adjusted for two-column layout */
+            text-align: center;
+            position: relative; /* For positioning checkbox and price */
+            margin-bottom: 20px;
+        }
+        .product-item img {
+            width: 100%;
+            height: 250px; /* Image height */
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .product-title {
+            padding: 15px; /* Padding for title */
+            font-size: 20px; /* Font size */
+            font-weight: bold;
+            font-style: italic;
+            background: linear-gradient(45deg, #007BFF, #00FF7F);
+            color: #fff;
+        }
+        .product-item a {
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .product-checkbox {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transform: scale(1.5); /* Scale the checkbox */
+        }
+        .price {
+            display: none;
+            padding: 10px;
+            background-color: #FF7F50;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            border-top: 2px solid #000; /* Border on the top */
+            border-radius: 0 0 10px 10px; /* Round corners at the bottom */
+            margin-top: 10px;
+        }
+        .next-button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-size: 1em;
+            color: white;
+            background: linear-gradient(135deg, #FF416C, #FF4B2B);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none; /* Make sure the link doesn't have underlines */
+        }
+                   <!-- Logo in the top left corner -->
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    /* Container for top bar */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    /* Menu lines (hamburger) */
+    .menu-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menu-line {
+      width: 30px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* Logo on the right */
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <!-- Left corner: 3 lines -->
+  <div class="menu-box">
+    <div class="menu-line"></div>
+            <div class="line"></div>
+    <div class="menu-line"></div>
+               <div class="line"></div>
+    <div class="menu-line"></div>
+               <div class="line"></div>
+  </div>
+
+
+  <!-- Right corner: logo -->
+  <img src="logo.png" alt="Logo" class="logo">
+</div>
+
+
+</html>
+
+
+</body>
+</html>
+</body>
+</html>
+    </style>
+</head>
+<body>
+    <h1>SENSI/MACRO</h1>
+    <div class="product-container">
+        <div class="product-item" onclick="togglePrice('price1')">
+            <input type="checkbox" class="product-checkbox" id="ff-checkbox">
+            <label for="ff-checkbox"></label>
+            <img src="image.png" alt="FF">
+            <div class="product-title">FF</div>
+            <div id="price1" class="price">Price: 400rs</div>
+        </div>
+        <div class="product-item" onclick="togglePrice('price2')">
+            <input type="checkbox" class="product-checkbox" id="ffmax-checkbox">
+            <label for="ffmax-checkbox"></label>
+            <img src="ffmax.jpeg" alt="FF Max">
+            <div class="product-title">FF Max</div>
+            <div id="price2" class="price">Price: 400rs</div>
+        </div>
+    </div>
+
+    <a href="cyber.html" class="next-button">Next</a>
+
+    <script>
+        function togglePrice(priceId) {
+            var priceElement = document.getElementById(priceId);
+            if (priceElement.style.display === "none" || priceElement.style.display === "") {
+                priceElement.style.display = "block";
+            } else {
+                priceElement.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

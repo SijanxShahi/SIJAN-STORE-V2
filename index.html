@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #e74c3c, #2c3e50, #8e44ad);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 4rem;
+            color: white;
+            animation: textAnimation 3s ease infinite, borderAnimation 2s infinite;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        h2 {
+            color: white;
+            font-size: 2rem;
+            animation: borderAnimation 2s infinite;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .delivery-time {
+            color: #ff007f;
+            font-size: 1.5rem;
+            font-weight: bold;
+            animation: colorChange 2s linear infinite;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        @keyframes textAnimation {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8); }
+        }
+        @keyframes borderAnimation {
+            0%, 100% {
+                border: 2px solid #ff007f;
+                box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+            }
+            50% {
+                border: 2px solid #ffb500;
+                box-shadow: 0 0 10px #ffb500, 0 0 20px #ffb500;
+            }
+        }
+        @keyframes colorChange {
+            0% { color: #ff007f; }
+            25% { color: #ffb500; }
+            50% { color: #00ff7f; }
+            75% { color: #007fff; }
+            100% { color: #ff007f; }
+        }
+        .next-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            animation: buttonAnimation 2s infinite;
+            margin-top: 20px;
+        }
+        .next-button:hover {
+            background-color: #e64a19;
+            transform: scale(1.1);
+        }
+        @keyframes buttonAnimation {
+            0%, 100% {
+                box-shadow: 0 0 10px #ff5722, 0 0 20px #ff5722;
+            }
+            50% {
+                box-shadow: 0 0 10px #e64a19, 0 0 20px #e64a19;
+            }
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+        .logo {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 24px;
+            width: 30px;
+        }
+        .line {
+            background-color: white;
+            height: 3px;
+            width: 100%;
+            transition: all 0.3s ease;
+            animation: rgbAnimation 2s infinite;
+        }
+        .nav-links {
+            list-style: none;
+            display: none; /* Initially hide the navigation items */
+            align-items: center;
+            margin-left: 0; /* Removed margin to bring links closer */
+        }
+        .nav-links.active {
+            display: flex; /* Show navigation items when .active class is added */
+        }
+        .nav-links li {
+            margin: 0 5px;
+        }
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold; /* Made text bold */
+            position: relative;
+        }
+        .nav-links li a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(45deg, red, green, blue);
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        .nav-links li a.active::after {
+            width: 100%;
+        }
+        @media (min-width: 600px) {
+            .nav-links {
+                display: flex;
+            }
+            .hamburger {
+                display: none;
+            }
+        }
+        .hamburger.active .line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        @keyframes rgbAnimation {
+            0%, 100% {
+                background-color: red;
+            }
+            33% {
+                background-color: green;
+            }
+            66% {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Logo in the top left corner -->
+        <img src="logo.png" alt="Logo" class="logo">
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link" onclick="activateLink(this)">Home</a></li>
+            <li><a href="interface.html" class="nav-link" onclick="activateLink(this)">Services</a></li>
+            <li><a href="contact.html" class="nav-link" onclick="activateLink(this)">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>SIJAN</h1>
+        <h2>WELCOME TO SIJAN STORE</h2>
+        <div class="delivery-time">
+            Delivery time 0 to 10 hours. We ensure the quickest and most reliable service just for you!
+        </div>
+        <a href="interface.html" class="next-button">Next</a>
+    </div>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+            document.querySelector('.hamburger').classList.toggle('active');
+        }
+
+        function activateLink(link) {
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        }
+    </script>
+</body>
+</html>

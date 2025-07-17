@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UC List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .box {
+            padding: 20px;
+            background-color: #333;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-style: italic;
+            border: 2px solid white;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        #price {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-style: italic;
+            border: 2px solid white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .next-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            font-style: italic;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+        .next-button:hover {
+            background-color: #e64a19;
+            transform: scale(1.1);
+        }
+        logo {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 24px;
+            width: 30px;
+        }
+        .line {
+            background-color: white;
+            height: 3px;
+            width: 100%;
+            transition: all 0.3s ease;
+            animation: rgbAnimation 2s infinite;
+        }
+        .nav-links {
+            list-style: none;
+            display: none; /* Initially hide the navigation items */
+            align-items: center;
+            margin-left: 0; /* Removed margin to bring links closer */
+        }
+        .nav-links.active {
+            display: flex; /* Show navigation items when .active class is added */
+        }
+        .nav-links li {
+            margin: 0 5px;
+        }
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold; /* Made text bold */
+            position: relative;
+        }
+        .nav-links li a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0;
+            background: linear-gradient(45deg, red, green, blue);
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        .nav-links li a.active::after {
+            width: 100%;
+        }
+        @media (min-width: 600px) {
+            .nav-links {
+                display: flex;
+            }
+            .hamburger {
+                display: none;
+            }
+        }
+        .hamburger.active .line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        @keyframes rgbAnimation {
+            0%, 100% {
+                background-color: red;
+            }
+            33% {
+                background-color: green;
+            }
+            66% {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+           <!-- Logo in the top left corner -->
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    /* Container for top bar */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    /* Menu lines (hamburger) */
+    .menu-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menu-line {
+      width: 30px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* Logo on the right */
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <!-- Left corner: 3 lines -->
+<div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+  <!-- Right corner: logo -->
+  <img src="logo.png" alt="Logo" class="logo">
+</div>
+
+
+</html>
+
+
+</body>
+</html>
+</body>
+</html>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link" onclick="activateLink(this)">Home</a></li>
+            <li><a href="interface.html" class="nav-link" onclick="activateLink(this)">Services</a></li>
+            <li><a href="contact.html" class="nav-link" onclick="activateLink(this)">Contact</a></li>
+        </ul>
+    </nav>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" onclick="showPrice('60 UC - 135rs')">60 UC</div>
+        <div class="box" onclick="showPrice('120 UC - 270rs')">120 UC</div>
+        <div class="box" onclick="showPrice('325 UC - 680rs')">325 UC</div>
+        <div class="box" onclick="showPrice('660 UC - 1360rs')">660 UC</div>
+        <div class="box" onclick="showPrice('1800 UC - 6650rs')">1800 UC</div>
+        <div class="box" onclick="showPrice('4000 UC - 12999rs')">4000 UC</div>
+        <div class="box" onclick="showPrice('8100 UC - 25800rs')">8100 UC</div>
+    </div>
+    <div id="price"><strong>Click on an item to see the price</strong></div>
+    <a href="ffpayment.html" class="next-button">Next</a>
+
+    <script>
+        function showPrice(price) {
+            document.getElementById('price').textContent = price;
+        }
+    </script>
+</body>
+</html>

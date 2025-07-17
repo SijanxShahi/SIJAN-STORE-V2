@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us with Countdown</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #000; /* Dark black background */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h2, h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: textColorAnimation 2s infinite, borderAnimation 3s infinite;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes textColorAnimation {
+            0%, 100% { color: #ff007f; }
+            50% { color: #ffb500; }
+        }
+        @keyframes borderAnimation {
+            0%, 100% {
+                border: 2px solid #ff007f;
+                box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+            }
+            50% {
+                border: 2px solid #ffb500;
+                box-shadow: 0 0 10px #ffb500, 0 0 20px #ffb500;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Send screenshot in my Gmail</h2>
+    <h3>Give your username in my Gmail</h3>
+    <p><strong>Gmail:</strong> <a href="mailto:anishpariyar1122@gmail.com" style="color: #ff9f00;" onclick="startCountdown(event)">anishpariyar1122@gmail.com</a></p>
+    <script>
+        function startCountdown(event) {
+            event.preventDefault();
+            const content = document.body;
+            content.innerHTML = '<div class="countdown">5</div>';
+            
+            let countdownElement = document.querySelector('.countdown');
+            let countdown = 5;
+
+            let timer = setInterval(() => {
+                countdown--;
+                if (countdown <= 0) {
+                    clearInterval(timer);
+                    window.location.href = 'end.html';
+                } else {
+                    countdownElement.textContent = countdown;
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
